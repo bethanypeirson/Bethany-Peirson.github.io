@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Pilates Garden – Mat Pilates Outdoors</title>
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@700&family=Intel+One+Mono:wght@300&family=Inria+Sans:wght@400&display=swap" rel="stylesheet">
+
+  <style>
+    /* --------------------------------------------------
+       ROOT VARIABLES
+    -------------------------------------------------- */
+    :root {
+      --cream: #F3EDE5;
+      --green: #212C16;
+      --accent: #563D1A;
+
+      --heading-serif: 'Inria Serif', serif;
+      --heading-mono: 'Intel One Mono', monospace;
+      --body-font: 'Inria Sans', sans-serif;
+
+      --container-width: 10px;
+      --section-padding: 25px;
+      --card-padding: 50px;
+      --card-gap: 15px;
+      --nav-height: 8px;
+
+      --button-radius: 170px;
+      --button-padding: 5px 50px;
+    }
+
+    /* --------------------------------------------------
+       GLOBAL
+    -------------------------------------------------- */
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--green);
+      font-family: var(--body-font);
+      font-size: 10px;
+      line-height: 12px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    main section {
+      padding: var(--section-padding) 0;
+    }
+
+    /* --------------------------------------------------
+       NAVIGATION
+    -------------------------------------------------- */
+    header {
+      background: var(--cream);
+    }
+
+    nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+    }
+
+    .nav-logo span {
+      font-family: var(--heading-serif);
+      font-size: 20px;
+      color: var(--green);
+    }
+
+    .nav-links ul {
+      list-style: none;
+      display: flex;
+      gap: 50px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      font-size: 20px;
+      color: var(--green);
+      text-decoration: none;
+      letter-spacing: 0;
+    }
+
+    .nav-links button {
+      font-size: 30px;
+      background: var(--green);
+      color: var(--cream);
+      border: none;
+      border-radius: var(--button-radius);
+      padding: var(--button-padding);
+    }
+
+    /* --------------------------------------------------
+       HERO
+    -------------------------------------------------- */
+    #home {
+      background: var(--cream);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    #home .hero-subheading {
+      font-family: var(--heading-mono);
+      font-size: 32px;
+      font-weight: 300;
+    }
+
+    #home h1 {
+      font-family: var(--heading-serif);
+      font-size: 60px;
+      font-weight: bold;
+    }
+
+    #home h2 {
+      font-family: var(--heading-mono);
+      font-size: 34px;
+      font-weight: 300;
+    }
+
+    #home button {
+      font-size: 30px;
+      background: var(--cream);
+      color: var(--green);
+      border: 2px solid var(--green);
+      border-radius: var(--button-radius);
+      padding: var(--button-padding);
+    }
+
+    /* --------------------------------------------------
+       CLASSES
+    -------------------------------------------------- */
+    section[aria-labelledby="classes-title"] {
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      padding: 40px;
+    }
+
+    .class-card {
+      background: var(--green);
+      padding: var(--card-padding);
+      border: 1px solid var(--cream);
+      text-align: center;
+    }
+
+    .class-card h3 {
+      font-family: var(--heading-serif);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    /* --------------------------------------------------
+       ABOUT
+    -------------------------------------------------- */
+    #about {
+      background: var(--cream);
+      color: var(--green);
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 60px;
+      gap: 20px;
+    }
+
+    .about-layout figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #about h2 {
+      font-family: var(--heading-mono);
+      font-size: 28px;
+      font-weight: 300;
+    }
+
+    #about button {
+      font-size: 30px;
+      background: var(--green);
+      color: var(--cream);
+      border: none;
+      border-radius: var(--button-radius);
+      padding: var(--button-padding);
+    }
+
+    /* --------------------------------------------------
+       LOCATION
+    -------------------------------------------------- */
+    #location {
+      background: var(--green);
+      color: var(--cream);
+    }
+
+    .location-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 60px;
+      gap: 20px;
+    }
+
+    .location-layout figure img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #location h2 {
+      font-family: var(--heading-serif);
+      font-size: 40px;
+    }
+
+    #location h3 {
+      font-family: var(--heading-mono);
+      font-size: 28px;
+      font-weight: 300;
+    }
+
+    .location-buttons button {
+      font-size: 30px;
+      background: var(--cream);
+      color: var(--green);
+      border-radius: var(--button-radius);
+      padding: var(--button-padding);
+      border: none;
+      margin-right: 10px;
+    }
+
+    /* --------------------------------------------------
+       CONTACT
+    -------------------------------------------------- */
+    #contact {
+      background: var(--cream);
+      color: var(--green);
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .contact-item h3 {
+      font-family: var(--heading-serif);
+      font-size: 28px;
+    }
+
+    .contact-logo span {
+      font-family: var(--heading-serif);
+      font-size: 40px;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    /* --------------------------------------------------
+       FOOTER
+    -------------------------------------------------- */
+    footer {
+      background: var(--green);
+      color: var(--cream);
+      padding: 40px;
+    }
+
+    .footer-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .footer-logo span {
+      font-family: var(--heading-serif);
+      font-size: 20px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .footer-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 10px;
+    }
+
+    /* --------------------------------------------------
+       RESPONSIVE — TABLET BELOW 768px
+    -------------------------------------------------- */
+    @media (max-width: 768px) {
+
+      nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        gap: 10px;
+      }
+
+      .nav-links ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      #home h1 {
+        font-size: 32px;
+      }
+
+      #home h2 {
+        font-size: 22px;
+      }
+
+      #home .hero-subheading {
+        font-size: 20px;
+      }
+
+      .classes-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .about-layout,
+      .location-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .footer-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav aria-label="Main navigation">
+      <div class="nav-logo">
+        <a href="#"><span>The Pilates Garden</span></a>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#memberships">Memberships/Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button aria-label="Book a class now">Book now</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="home" aria-labelledby="hero-title">
+      <p class="hero-subheading">MIND.BODY.CONNECTION</p>
+      <h1 id="hero-title">Mat Pilates</h1>
+      <h2>The Pilates Garden</h2>
+      <button aria-label="Book a Pilates class">Book A Class</button>
+    </section>
+
+    <!-- CLASSES -->
+    <section aria-labelledby="classes-title">
+      <h2 id="classes-title">—————— Classes —————</h2>
+
+      <div class="classes-grid">
+        <article class="class-card">
+          <figure><img src="#" alt="Pilates class: Sculpt"><figcaption>Sculpt</figcaption></figure>
+          <h3>Sculpt</h3>
+          <p>Strength-focused mat Pilates to tone and define your body.</p>
+        </article>
+
+        <article class="class-card">
+          <figure><img src="#" alt="Pilates class: Sweat"><figcaption>Sweat</figcaption></figure>
+          <h3>Sweat</h3>
+          <p>Dynamic, energising flows to elevate your heart rate.</p>
+        </article>
+
+        <article class="class-card">
+          <figure><img src="#" alt="Pilates class: Stretch"><figcaption>Stretch</figcaption></figure>
+          <h3>Stretch</h3>
+          <p>Lengthening sequences to improve mobility and release tension.</p>
+        </article>
+
+        <article class="class-card">
+          <figure><img src="#" alt="Pilates class: Sunset"><figcaption>Sunset</figcaption></figure>
+          <h3>Sunset</h3>
+          <p>Evening outdoor sessions to unwind as the sun goes down.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="about-layout">
+        <figure><img src="#" alt="Outdoor Pilates session"></figure>
+        <div>
+          <h2 id="about-title">About Our Pilates Style</h2>
+          <p>At The Pilates Garden, our mat Pilates blends mindful movement, breathwork, and outdoor energy.</p>
+          <button aria-label="Learn more about our Pilates style">Learn More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location" aria-labelledby="location-title">
+      <div class="location-layout">
+        <div>
+          <h2 id="location-title">Location</h2>
+          <h3>Gold Coast Australia</h3>
+          <p>Join us in our tranquil outdoor space surrounded by greenery and fresh air.</p>
+          <div class="location-buttons">
+            <button aria-label="Book a class at our Gold Coast location">Book Now</button>
+            <button aria-label="Learn more about our location">Learn More</button>
+          </div>
+        </div>
+        <figure><img src="#" alt="Map showing The Pilates Garden location"></figure>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">—————— Contact —————</h2>
+
+      <div class="contact-grid">
+        <article class="contact-item">
+          <h3>Email</h3>
+          <p>hello@thepilatesgarden.com</p>
+        </article>
+        <article class="contact-item">
+          <h3>Number</h3>
+          <p>+61 4XX XXX XXX</p>
+        </article>
+        <article class="contact-item">
+          <h3>Location</h3>
+          <p>Gold Coast, QLD</p>
+        </article>
+        <article class="contact-item">
+          <h3>Instagram</h3>
+          <p>@thepilatesgarden</p>
+        </article>
+      </div>
+
+      <div class="contact-logo">
+        <span>The Pilates Garden</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-layout">
+      <div class="footer-logo">
+        <span>The Pilates Garden</span>
+      </div>
+      <div class="footer-links">
+        <ul>
+          <li><a href="mailto:hello@thepilatesgarden.com">Email</a></li>
+          <li><a href="tel:+614XXXXXXX">Phone</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="https://instagram.com/thepilatesgarden">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
